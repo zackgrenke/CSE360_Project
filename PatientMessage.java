@@ -51,5 +51,23 @@ public class PatientMessage extends HBox
 		vBox.getChildren().addAll(status, grid1);
 		this.getChildren().add(vBox);
 		this.getChildren().add(area1);
+		
+		button1.setOnAction(
+				event -> 
+				{
+					String doctorCheck = checkBox1.getText();
+					String nurseCheck = checkBox2.getText();
+					String urgentCheck = checkBox3.getText();
+					boolean doctorCheckVal = checkBox1.isSelected();
+					boolean nurseCheckVal = checkBox1.isSelected();
+					boolean urgentCheckVal = checkBox1.isSelected();
+					
+					boolean patientAge = checkBox1.isSelected();
+					String patientAgeStr = Boolean.toString(patientAge);
+					
+					String prescription = doctorCheckVal + "," + nurseCheckVal + "," + urgentCheckVal;
+					
+
+				});
 	}
 }

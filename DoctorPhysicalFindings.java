@@ -27,14 +27,19 @@ public class DoctorPhysicalFindings extends HBox
 		VBox vBox = new VBox();
 		GridPane grid1 = new GridPane();
 		status = new Label("");
-		area1 = new TextArea("Enter Patients Physical Findings...");
 		status.setTextFill(Color.RED);
+		
+		area1 = new TextArea("Enter Patients Physical Findings...");
+		
 		Label patientFirstName = new Label("Patient First Name");
 		patientFirstField = new TextField();
+		
 		Label patientLastName = new Label("Patient Last Name");
 		patientLastField = new TextField();
+		
 		Label medicationPresc = new Label("Prescribe Medication");
 		medField = new TextField();
+		
 		Button button1 = new Button("Send Prescription");
 		Button button2 = new Button("Submit Findings");
         
@@ -62,5 +67,35 @@ public class DoctorPhysicalFindings extends HBox
 		vBox.getChildren().addAll(status, grid1);
 		this.getChildren().add(vBox);
 		this.getChildren().add(area1);
+		
+		button1.setOnAction(
+				event -> 
+				{
+					String patientFirst = patientFirstField.getText();
+					String patientLast = patientLastField.getText();
+					String patientPresc = medField.getText();
+					
+					String prescription = patientFirst + "," + patientLast + "," + patientPresc;
+					
+
+				});
+		
+		button2.setOnAction(
+				event -> 
+				{
+					String patientFirst = patientFirstField.getText();
+					String patientLast = patientLastField.getText();
+					String patientPresc = medField.getText();
+					String patientFindings = area1.getText();
+					patientFirstField.setText("");
+					patientLastField.setText("");
+					medField.setText("");
+					area1.setText("");
+					
+					String findings = patientFirst + "," + patientLast + "," + patientPresc +"," + patientFindings;
+					
+				});
+		
+		
 	}
 }

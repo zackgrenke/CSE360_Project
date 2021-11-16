@@ -69,5 +69,49 @@ public class NursePatientInfo extends HBox
 		vBox.getChildren().addAll(status, grid1);
 		this.getChildren().add(vBox);
 		this.getChildren().add(area1);
+		
+		
+		button1.setOnAction(
+				event -> 
+				{
+					String patientName = patientFullField.getText();
+					String patientW = patientWeightField.getText();
+					String patientH = patientHeightField.getText();
+					String patientBP = patientBloodPresField.getText();
+					String patientPharm = patientPharmField.getText();
+					boolean patientAge = checkBox1.isSelected();
+					String patientAgeStr = Boolean.toString(patientAge);
+					
+					String prescription = patientName + "," + patientW + "," + patientH + "," + patientBP + "," + patientPharm + "," + patientAgeStr;
+					
+
+				});
+		
+		button2.setOnAction(
+				event -> 
+				{
+					String patientName = patientFullField.getText();
+					String patientW = patientWeightField.getText();
+					String patientH = patientHeightField.getText();
+					String patientBP = patientBloodPresField.getText();
+					String patientPharm = patientPharmField.getText();
+					String patientAlg = area1.getText();
+					patientFullField.setText("");
+					patientWeightField.setText("");
+					patientHeightField.setText("");
+					patientBloodPresField.setText("");
+					patientPharmField.setText("");
+					area1.setText("");
+					
+					boolean patientAge = checkBox1.isSelected();
+					String patientAgeStr = Boolean.toString(patientAge);
+					
+					String prescription = patientName + "," + patientW + "," + patientH + "," + patientBP + "," + patientPharm + "," + patientAgeStr + "," + patientAlg;
+					
+				});
+		
+		
+		
+		
 	}
 }

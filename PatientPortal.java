@@ -38,22 +38,7 @@ public class PatientPortal extends HBox
 		Button button1 = new Button("Login");
 		Button button2 = new Button("Create New User");
 		
-		ComboBox<String> comboBox = new ComboBox<String>();
-		ComboBox comboBox2 = new ComboBox();
-		ComboBox comboBox3 = new ComboBox();
 		
-		
-		comboBox.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September","October","November", "December");
-		
-		for(int i = 1; i < 32; i++)
-		{
-			comboBox2.getItems().addAll(i);
-		}
-		
-		for(int i = 2021; i > 1899; i--)
-		{
-			comboBox3.getItems().addAll(i);
-		}
         //GridPane that hold those labels & text fields.
 		grid1.setPadding(new Insets(10, 10, 10, 10));;
 		grid1.setHgap(5);
@@ -76,8 +61,5 @@ public class PatientPortal extends HBox
         //Add the left half and right half to the PatientPhysicalFindings
 		vBox.getChildren().addAll(status, grid1);
 		this.getChildren().add(vBox);
-		this.getChildren().add(comboBox);
-		this.getChildren().add(comboBox2);
-		this.getChildren().add(comboBox3);
 	}
 }

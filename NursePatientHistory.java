@@ -57,9 +57,9 @@ public class NursePatientHistory extends HBox
 
 		table.setPrefHeight(100);
 		table.setPrefWidth(500);
+		
         //Add the left half and right half to the Pane
 		this.getChildren().addAll(table, area1);
-		//this.getChildren().add(area1);
-		//this.getChildren().add(area2);
+
 	}
 }
